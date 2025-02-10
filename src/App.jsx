@@ -1,6 +1,8 @@
 import './App.css'
 import {Routes, Route} from 'react-router'
 import Students from './components/Students'
+import StudentDetails from './components/StudentDetails'
+import Navbar from './components/Navbar'
 
 // Step 2: import Route and Routes from "react-router"
 
@@ -13,8 +15,10 @@ function App() {
   return (
     <>
    
+   <Navbar/>
       <Routes>
         <Route path = "/students" element = {<Students/>}  />
+        <Route path='/students/3' element = {<StudentDetails/>}/>
       </Routes>
 
 
