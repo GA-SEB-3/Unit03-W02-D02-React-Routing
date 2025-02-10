@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router'
 import Students from './components/Students'
 import StudentDetails from './components/StudentDetails'
 import Navbar from './components/Navbar'
+import Homepage from './components/Homepage'
 
 // Step 2: import Route and Routes from "react-router"
 
@@ -18,7 +19,9 @@ function App() {
    <Navbar/>
       <Routes>
         <Route path = "/students" element = {<Students/>}  />
-        <Route path='/students/3' element = {<StudentDetails/>}/>
+        <Route path='/students/:id' element = {<StudentDetails/>}/>
+        <Route path='/' element = {<Homepage/>}/>
+        
       </Routes>
 
 
