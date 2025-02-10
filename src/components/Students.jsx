@@ -18,7 +18,7 @@ function Students() {
       {students.map((oneStudent)=>
         <div key={oneStudent.id}>
             <h3>{oneStudent.studentName}</h3>
-            <Link to={`/${oneStudent.id}`}>Show Student Details</Link>
+            <Link to={`/students/${oneStudent.id}`}>Show Student Details</Link>
         </div>
       )}
     </div>
