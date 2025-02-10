@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router'
 function Students() {
     const [students, setStudents] = useState([])
 
@@ -17,6 +18,7 @@ function Students() {
       {students.map((oneStudent)=>
         <div key={oneStudent.id}>
             <h3>{oneStudent.studentName}</h3>
+            <Link to={`/${oneStudent.id}`}>Show Student Details</Link>
         </div>
       )}
     </div>

@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { useParams } from 'react-router'
 
 function StudentDetails() {
     const [student,setStudent] = useState(null)
+     
+    const {studentId} = useParams()
 
     async function getStudentData(){
-        const studentInfo = await axios.get("https://omar-ga-class.onrender.com/students/4")
+        const studentInfo = await axios.get(`https://omar-ga-class.onrender.com/students/${studentId}`)
         setStudent(studentInfo.data)
     }
 
