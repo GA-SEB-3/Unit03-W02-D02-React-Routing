@@ -4,12 +4,19 @@ import { useParams } from 'react-router'
 
 function StudentDetails() {
     const [student,setStudent] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
      
     const {studentId} = useParams()
 
     async function getStudentData(){
-        const studentInfo = await axios.get(`https://omar-ga-class.onrender.com/students/${studentId}`)
-        setStudent(studentInfo.data)
+        try{
+            const studentInfo = await axios.get(`${import.meta.env.VITE_API_URL}/${studentId}`)
+            setStudent(studentInfo.data)
+        }
+        catch(error){
+            setErrorMessage("Error Fetching Student Please input valid ID")
+        }
+
     }
 
     useEffect(()=>{
@@ -25,6 +32,7 @@ function StudentDetails() {
 
         </div>
       )}
+      {errorMessage && <h1 id='error'>{errorMessage}</h1>}
     </div>
   )
 }

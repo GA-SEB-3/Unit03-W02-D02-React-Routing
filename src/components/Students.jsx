@@ -5,7 +5,7 @@ function Students() {
     const [students, setStudents] = useState([])
 
     async function getAllStudents(){
-        const studentsInfo = await axios.get("https://omar-ga-class.onrender.com/students")
+        const studentsInfo = await axios.get(import.meta.env.VITE_API_URL)
         setStudents(studentsInfo.data)
     }
 
