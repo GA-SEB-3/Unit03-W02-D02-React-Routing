@@ -1,9 +1,10 @@
 import './App.css'
-import {Routes, Route} from 'react-router'
+import {Routes, Route, Navigate} from 'react-router'
 import Students from './components/Students'
 import StudentDetails from './components/StudentDetails'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
+import PageNotFound from './components/PageNotFound'
 
 // Step 2: import Route and Routes from "react-router"
 
@@ -21,6 +22,11 @@ function App() {
         <Route path = "/students" element = {<Students/>}  />
         <Route path='/students/:studentId' element = {<StudentDetails/>}/>
         <Route path='/' element = {<Homepage/>}/>
+        <Route path='*' element = {<PageNotFound/>}/>
+
+        {/* <Route path="/404" element={<PageNotFound/>}/>
+        <Route path='*' element = {<Navigate to={"/404"}/>}/> */}
+
         
       </Routes>
 
