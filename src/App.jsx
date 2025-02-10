@@ -6,6 +6,10 @@ import Students from './components/Students'
 
 function App() {
 
+  // exerise 1:
+  // 1. create a component called StudentDetails.jsx
+  // 2. this component should send an axios request to the endpoin that contains your data
+  // 3. create a route in the App.jsx to display this component
   return (
     <>
    
